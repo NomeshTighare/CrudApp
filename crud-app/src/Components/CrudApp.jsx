@@ -7,7 +7,7 @@ const CrudApp = () =>{
 return(
    
     <Box>
-        <img src={welcome} style={{width:'100%', height: '300px',}}/>
+        <img src={welcome} style={{width:'100%', height: '100%',}}/>
     </Box>
 )
 }

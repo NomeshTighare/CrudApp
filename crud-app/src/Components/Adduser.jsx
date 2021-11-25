@@ -20,7 +20,7 @@ const initialvalues = {
 }
 const Adduser = () => {
     const [user , setuser] = useState(initialvalues);
-    const{ id, name, username, email, phone} =  user;
+    const{  name, username, email, phone} =  user;
     const history = useHistory();
     const classes = useStyle();
     const onValueChange = (e) =>{

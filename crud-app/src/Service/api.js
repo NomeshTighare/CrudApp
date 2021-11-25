@@ -1,19 +1,19 @@
 import axios from 'axios';
-const url = 'http://localhost:3003/user';
+const usersurl = 'http://localhost:8000/user';
 
-export const getuser = async (id) =>{
+export const getuser = async (id) => {
     id = id || '';
-    return await axios.get(`${url}/${id}`); //url = 'http://localhost:3003/user';
+    return await axios.get(`${usersurl}/${id}`); //url = 'http://localhost:3003/user';
 }
 
 export const adduser = async (user) =>{
-    return await axios.post(url,user);
+    return await axios.post(`${usersurl}/add`,user);
 }
 
 export const edituser = async (id,user) =>{
-    return await axios.put(`${url}/${id}`,user);
+    return await axios.put(`${usersurl}/${id}`,user);
 }
 
-export const deleteuser = async (id,user) =>{
-    return await axios.delete(`${url}/${id}`,user);
+export const deleteuser = async (id) =>{
+    return await axios.delete(`${usersurl}/${id}`);
 }

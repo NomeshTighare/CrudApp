@@ -37,9 +37,7 @@ const Allusers = () => {
     }
 
     const getalluser = async () => {
-
-    const response = await getuser();
-    console.log(response);
+    let response = await getuser();
     setusers(response.data)
   };
   return (
@@ -55,17 +53,16 @@ const Allusers = () => {
               </TableRow>
           </TableHead>
           <TableBody>
-              {
-                  user.map(user =>(
-                      <TableRow className={classes.row}>
-                          <TableCell>{user.id}</TableCell>
+              {user.map((user) =>(
+                      <TableRow className={classes.row} key={user._id}>
+                          <TableCell>{user._id}</TableCell>
                           <TableCell>{user.name}</TableCell>
                           <TableCell>{user.username}</TableCell>
                           <TableCell>{user.email}</TableCell>
                           <TableCell>{user.phone}</TableCell>
                           <TableCell>
-                            <Button  variant="contained" color="primary" style={{marginRight:"20px "}} component={Link} to={`/edit/${user.id}`}>Edit</Button>
-                            <Button variant="contained" color="secondary" onClick={() => deleteUserData(user.id)}>Delete</Button>
+                            <Button  variant="contained" color="primary" style={{marginRight:"20px "}} component={Link} to={`/edit/${user._id}`}>Edit</Button>
+                            <Button variant="contained" color="secondary" onClick={() => deleteUserData(user._id)}>Delete</Button>
                             </TableCell>
                           </TableRow>
                   ))
